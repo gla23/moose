@@ -1,0 +1,26 @@
+# OS / tooling noise
+.DS_Store
+__pycache__/
+*.pyc
+
+# ---------------------------------------------------------------------------
+# Guard against committing non-redistributable font binaries.
+#
+# The archived Wix mirror in source/raw/ was copied with font files excluded,
+# because it originally contained Helvetica, Avenir LT, DIN Next, Wix Madefor,
+# Moon Flower and Allenattore — none of which may be redistributed. build.py
+# ignores font URLs entirely, so nothing is lost by their absence.
+#
+# These rules stop them reappearing if the mirror is ever re-taken with wget.
+# The OFL fonts we DO ship (source/gf/, docs/assets/fonts/) are unaffected.
+# ---------------------------------------------------------------------------
+source/raw/**/*.woff
+source/raw/**/*.woff2
+source/raw/**/*.ttf
+source/raw/**/*.eot*
+source/raw/**/ufonts/
+source/raw/**/fonts-cache/
+source/raw/**/user-site-fonts/
+
+# Scratch copies of the two personal-use-only brand fonts, if ever placed here
+source/fontid/
